@@ -1,3 +1,79 @@
+// Array of "Hello" in different languages
+const greetings = [
+    "Hello",           // English
+    "Hola",            // Spanish
+    "Bonjour",         // French
+    "Ciao",            // Italian
+    "Hallo",           // German
+    "Olá",             // Portuguese
+    "Привет",          // Russian
+    "مرحبا",           // Arabic
+    "你好",            // Mandarin
+    "こんにちは",       // Japanese
+    "안녕하세요",       // Korean
+    "สวัสดี",          // Thai
+    "Xin chào",        // Vietnamese
+    "Kumusta",         // Tagalog/Filipino
+    "Jambo",           // Swahili
+    "Guten Tag",       // German (formal)
+    "Namaste",         // Hindi
+    "Shalom",          // Hebrew
+    "Merhaba",         // Turkish
+    "你好吗",          // Mandarin (how are you)
+];
+
+// Shuffle array function
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+// Shuffle greetings on load
+let shuffledGreetings = shuffleArray(greetings);
+let greetingIndex = 0;
+
+// Set greeting with animation
+function setGreeting() {
+    const greetingElement = document.getElementById('greeting');
+    if (greetingElement) {
+        greetingElement.style.animation = 'none';
+        setTimeout(() => {
+            greetingElement.textContent = shuffledGreetings[greetingIndex];
+            greetingElement.style.animation = 'fadeIn 0.5s ease-in';
+        }, 10);
+        
+        greetingIndex = (greetingIndex + 1) % shuffledGreetings.length;
+    }
+}
+
+// Set random greeting on page load
+window.addEventListener('load', () => {
+    setGreeting();
+    
+    // Change greeting every 5 seconds
+    setInterval(setGreeting, 5000);
+});
+
+// Add fade-in animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
