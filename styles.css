@@ -256,6 +256,7 @@ body {
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.3s ease;
+    margin-bottom: 2rem;
 }
 
 .content-section.alt .experience-card {
