@@ -311,7 +311,7 @@ body {
 }
 
 .experience-card.dropdown.active .dropdown-content {
-    max-height: 1500px;
+    max-height: 2500px;
     padding: 0 2rem 2rem 3.5rem;
 }
 
