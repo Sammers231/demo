@@ -279,7 +279,7 @@ body {
 
 .dropdown-icon {
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 0.8rem;
     min-width: 20px;
     color: var(--accent-orange);
@@ -292,7 +292,7 @@ body {
 .dropdown-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0 2rem 0 3.5rem;
 }
 
