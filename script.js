@@ -122,3 +122,11 @@ document.querySelectorAll('.experience-card, .achievement-item').forEach(el => {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// Dropdown functionality
+document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', function() {
+        const dropdownCard = this.closest('.dropdown');
+        dropdownCard.classList.toggle('active');
+    });
+});
