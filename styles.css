@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -23,7 +26,7 @@ body {
     font-family: 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background: linear-gradient(135deg, #E6E6FA 0%, #F0D9F0 40%, #F5E8D0 70%, #FFDAB9 100%);
+    background: linear-gradient(to bottom, #E6E6FA 0%, #F0D9F0 40%, #F5E8D0 70%, #FFDAB9 100%);
     overflow-x: hidden;
 }
 
@@ -71,6 +74,7 @@ body {
 }
 
 .header-nav a {
+    font-family: 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
     color: var(--text-gray);
     text-decoration: none;
     font-size: 0.95rem;
@@ -131,6 +135,7 @@ body {
 }
 
 .hero-title {
+    font-family: 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 0;
@@ -170,6 +175,7 @@ body {
     justify-content: center;
     text-decoration: none;
     color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -182,16 +188,23 @@ body {
 }
 
 .btn-orange {
-    background-color: var(--accent-orange);
+    background-color: #FFD7A8;
+    color: #2C2C2C;
 }
 
 .btn-red {
-    background-color: var(--accent-red);
-    color: white;
+    background-color: #FFAB91;
+    color: #2C2C2C;
+}
+
+.btn-gold {
+    background-color: #EC5800;
+    color: #F5F5F0;
 }
 
 .btn-cyan {
-    background-color: var(--accent-cyan);
+    background-color: #8B4513;
+    color: #F5F5F0;
 }
 
 /* Content Sections */
@@ -210,6 +223,7 @@ body {
 }
 
 .section-title {
+    font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
@@ -306,6 +320,7 @@ body {
 }
 
 .card-header h3 {
+    font-family: 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -320,15 +335,26 @@ body {
 }
 
 .date {
-    color: var(--text-gray);
-    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .description {
-    color: var(--text-gray);
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
     line-height: 1.8;
+}
+
+.dropdown-content p {
+    color: var(--text-gray);
     font-size: 0.95rem;
+    margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -336,6 +362,7 @@ body {
     background-color: var(--bg-white);
     border-top: 1px solid #e0e0e0;
     padding: 3rem 2rem;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .footer-content {
@@ -353,6 +380,7 @@ body {
 }
 
 .footer-item h4 {
+    font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -360,11 +388,13 @@ body {
 }
 
 .footer-item p {
+    font-family: 'DM Sans', sans-serif;
     color: var(--text-gray);
     font-size: 0.95rem;
 }
 
 .footer-item a {
+    font-family: 'DM Sans', sans-serif;
     color: var(--text-gray);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -376,15 +406,18 @@ body {
 
 .footer-bottom {
     text-align: center;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .footer-bottom p {
+    font-family: 'DM Sans', sans-serif;
     color: var(--text-gray);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .footer-bottom a {
+    font-family: 'DM Sans', sans-serif;
     color: var(--accent-orange);
     text-decoration: none;
     transition: color 0.3s ease;
