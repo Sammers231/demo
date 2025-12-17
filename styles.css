@@ -114,10 +114,23 @@ body {
     padding: 0 20px;
 }
 
+.hello-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hello-gif {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
 .hero-title {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     color: var(--text-dark);
     letter-spacing: -1px;
 }
