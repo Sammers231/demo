@@ -357,6 +357,13 @@ body {
     margin-bottom: 1rem;
 }
 
+.dropdown-content img,
+.dropdown-content video {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
 /* Footer */
 .footer {
     background-color: var(--bg-white);
