@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
     setInterval(setGreeting, 5000);
 });
 
-// Add fade-in animation
+// Add fade-in animation and mobile touch optimizations
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeIn {
@@ -71,10 +71,18 @@ style.textContent = `
             transform: translateY(0);
         }
     }
+    
+    /* Mobile touch optimizations */
+    @media (max-width: 768px) {
+        a, button, .cta-btn, .dropdown-trigger {
+            min-height: 44px;
+            min-width: 44px;
+        }
+    }
 `;
 document.head.appendChild(style);
 
-// Smooth scroll for navigation links
+// Smooth scroll for navigation links with mobile optimization
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -88,15 +96,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Header background on scroll
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10, 14, 39, 0.99)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-    } else {
-        navbar.style.background = 'rgba(10, 14, 39, 0.95)';
-        navbar.style.boxShadow = 'none';
+    const header = document.querySelector('.header');
+    if (header && window.scrollY > 50) {
+        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    } else if (header) {
+        header.style.boxShadow = 'none';
     }
 });
 
@@ -123,10 +129,30 @@ document.querySelectorAll('.experience-card, .achievement-item').forEach(el => {
     observer.observe(el);
 });
 
-// Dropdown functionality
+// Dropdown functionality with touch support
 document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
-    trigger.addEventListener('click', function() {
+    trigger.addEventListener('click', function(e) {
         const dropdownCard = this.closest('.dropdown');
         dropdownCard.classList.toggle('active');
+    });
+    
+    // Add touch feedback
+    trigger.addEventListener('touchstart', function() {
+        this.style.opacity = '0.7';
+    });
+    
+    trigger.addEventListener('touchend', function() {
+        this.style.opacity = '1';
+    });
+});
+
+// Improve button touch feedback
+document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('touchstart', function() {
+        this.style.transform = 'scale(0.95)';
+    });
+    
+    btn.addEventListener('touchend', function() {
+        this.style.transform = 'scale(1)';
     });
 });

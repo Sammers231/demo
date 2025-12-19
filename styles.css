@@ -33,8 +33,12 @@ body {
 /* Header */
 .header {
     background-color: transparent;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.98);
 }
 
 .header-container {
@@ -43,12 +47,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .header-left {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .logo-icon {
@@ -58,28 +64,30 @@ body {
 
 .header-name {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-dark);
 }
 
 .header-title {
     color: var(--text-gray);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 500;
 }
 
 .header-nav {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .header-nav a {
     font-family: 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
     color: var(--text-gray);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 0.5rem;
 }
 
 .header-nav a:hover {
@@ -88,7 +96,7 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 60px 2rem 100px;
+    padding: 40px 1rem 60px;
     background-color: var(--bg-light);
 }
 
@@ -115,21 +123,22 @@ body {
 }
 
 .hero-content {
-    padding: 0 20px;
+    padding: 0;
 }
 
 .hello-container {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .hello-gif {
-    width: 200px;
+    width: 150px;
     height: auto;
-    max-height: 200px;
+    max-height: 150px;
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -144,11 +153,11 @@ body {
 }
 
 .about-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .about-section h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-dark);
@@ -157,18 +166,19 @@ body {
 .about-section p {
     color: var(--text-gray);
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 /* CTA Buttons */
 .cta-buttons {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .cta-btn {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -177,14 +187,20 @@ body {
     color: var(--text-dark);
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all 0.3s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
 }
 
 .cta-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn:active {
+    transform: scale(0.98);
 }
 
 .btn-orange {
@@ -209,7 +225,7 @@ body {
 
 /* Content Sections */
 .content-section {
-    padding: 100px 2rem;
+    padding: 80px 1.5rem;
     background-color: var(--bg-white);
 }
 
@@ -231,9 +247,9 @@ body {
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-gray);
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 /* Experience Grid */
@@ -457,39 +473,72 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 0.75rem;
+    }
+
+    .header-left {
+        min-width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
     .header-nav {
-        gap: 1rem;
+        gap: 0.75rem;
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .header-nav a {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.5rem;
+    }
+
+    .header-name {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 30px 1rem 50px;
+    }
+
+    .hero-container {
+        gap: 30px;
     }
 
     .hero-title {
         font-size: 2rem;
     }
 
-    .hero-content {
-        padding: 0;
+    .hello-gif {
+        width: 120px;
+        max-height: 120px;
+    }
+
+    .hello-container {
+        gap: 1rem;
+        justify-content: center;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 
     .cta-buttons {
         gap: 1rem;
+        justify-content: center;
     }
 
     .cta-btn {
-        width: 90px;
-        height: 90px;
-        font-size: 0.85rem;
+        width: 85px;
+        height: 85px;
+        font-size: 0.75rem;
+        padding: 0.75rem;
+        min-height: 85px;
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .experience-grid {
@@ -498,5 +547,151 @@ body {
 
     .content-section {
         padding: 50px 1rem;
+    }
+
+    .experience-card {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-header h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .header-left {
+        width: 100%;
+    }
+
+    .header-nav {
+        width: 100%;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .header-nav a {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .header-name {
+        font-size: 0.85rem;
+    }
+
+    .header-title {
+        font-size: 0.65rem;
+    }
+
+    .hero {
+        padding: 20px 1rem 40px;
+    }
+
+    .hero-container {
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .about-section h2 {
+        font-size: 1rem;
+    }
+
+    .about-section p {
+        font-size: 0.9rem;
+    }
+
+    .hello-container {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .hello-gif {
+        width: 100px;
+        max-height: 100px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cta-buttons {
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .cta-btn {
+        width: 75px;
+        height: 75px;
+        font-size: 0.65rem;
+        padding: 0.5rem;
+        min-height: 75px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .content-section {
+        padding: 40px 1rem;
+    }
+
+    .experience-card {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 8px;
+    }
+
+    .card-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .dropdown-trigger {
+        min-height: 55px;
+        padding: 0.75rem;
+    }
+
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-grid {
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .footer-item h4 {
+        font-size: 0.8rem;
+    }
+
+    .footer-item p {
+        font-size: 0.8rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.75rem;
     }
 }
